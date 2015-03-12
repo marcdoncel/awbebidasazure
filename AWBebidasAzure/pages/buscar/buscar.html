@@ -1,0 +1,31 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <title>buscar</title>
+
+    <link href="buscar.css" rel="stylesheet" />
+    <script src="buscar.js"></script>
+</head>
+<body>
+    <div class="buscar fragment">
+        <header class="page-header" aria-label="Header content" role="banner">
+            <button class="back-button" data-win-control="WinJS.UI.BackButton"></button>
+            <h1 class="titlearea win-type-ellipsis">
+                <span class="pagetitle">Busca tu bebida!</span>
+            </h1>
+        </header>
+        <section class="page-section" aria-label="Main content" role="main">
+            <div>
+                <label for="txtNom">Nombre</label>
+                <br />
+                <input type="text" id="txtNom" placeholder="Nombre de la bebida a buscar" /><br/>
+                <label for="txtPrecio">Precio</label>
+                <br />
+                <input type="text" id="txtPrecio" placeholder="Precio de la bebida a buscar" />
+                <button id="btnBuscarBebida" value="Buscar">Buscar</button>
+            </div>
+        </section>
+    </div>
+</body>
+</html>
