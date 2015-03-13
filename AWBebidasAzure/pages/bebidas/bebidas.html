@@ -1,0 +1,30 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <title>bebidas</title>
+
+    <link href="bebidas.css" rel="stylesheet" />
+    <script src="bebidas.js"></script>
+</head>
+<body>
+    <div class="bebidas fragment">
+        <header class="page-header" aria-label="Header content" role="banner">
+            <!--<button class="back-button" data-win-control="WinJS.UI.BackButton"></button>-->
+            <h1 id="cabecera" class="titlearea win-type-ellipsis">
+                <span class="pagetitle">Bienvenido a bebidas</span>
+                <span class="pagetitle"
+                      data-win-bind="innerText: nombre;"></span>
+                <span class="pagetitle"
+                      data-win-bind="innerText: precio;"></span>
+            </h1>
+        </header>
+        <section class="page-section" aria-label="Main content" role="main">
+            <div id="blocs" data-win-control="WinJS.UI.ListView"
+                 data-win-options="{itemDataSource:Datos.Bebidas.dataSource,
+             itemTemplate: select('#PlantillaBebidas'),
+             layout:{type: WinJS.UI.CellSpanningLayout}}"></div>
+        </section>
+    </div>
+</body>
+</html>

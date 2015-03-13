@@ -3,18 +3,9 @@
         "https://awnotepad.azure-mobile.net/",
         "dpRuizzhXZcJOEFKRujsFLigRMUTHQ39");
 
-
-    var buscar = function (bebida) {
+var busqueda = function (nom) {
         var tabla = cliente.getTable("bebidas");
-
-
-        try {
-            return tabla.where({ nombre: bebida.nombre }).read();
-                
-        } catch (e) {
-
-            var ee = e.message;
-        }
+        return tabla.where({ nombre: nom }).read();
     }
 
     var registro = function (usuario) {
@@ -27,7 +18,6 @@
                        MessageDialog
                         ("Bebida creada correctamente")
                         .showAsync();
-
                 }
                 else {
                     new Windows.UI.Popups.
@@ -38,11 +28,20 @@
 
 
     };
+
+    function GetBebidas(nom) {
+        var tabla = cliente.getTable("bebidas");
+
+        return tabla.where({ nombre: nom }).read();
+
+
+    }
+
     WinJS.Namespace.define("Azure", {
-        buscar: buscar,
-        registro: registro
-
-
+        registro: registro,
+        Busqueda: busqueda,
+        bebidas: GetBebidas
+        
     });
 
 })();

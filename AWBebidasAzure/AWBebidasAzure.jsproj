@@ -69,6 +69,9 @@
     <Content Include="js\Modelo.js" />
     <Content Include="js\navigator.js" />
     <Content Include="packages.config" />
+    <Content Include="pages\bebidas\bebidas.css" />
+    <Content Include="pages\bebidas\bebidas.html" />
+    <Content Include="pages\bebidas\bebidas.js" />
     <Content Include="pages\buscar\buscar.css" />
     <Content Include="pages\buscar\buscar.html" />
     <Content Include="pages\buscar\buscar.js" />

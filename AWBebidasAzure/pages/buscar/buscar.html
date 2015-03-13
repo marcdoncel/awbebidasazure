@@ -17,13 +17,14 @@
         </header>
         <section class="page-section" aria-label="Main content" role="main">
             <div>
-                <label for="txtNom">Nombre</label>
-                <br />
-                <input type="text" id="txtNom" placeholder="Nombre de la bebida a buscar" /><br/>
-                <label for="txtPrecio">Precio</label>
-                <br />
-                <input type="text" id="txtPrecio" placeholder="Precio de la bebida a buscar" />
-                <button id="btnBuscarBebida" value="Buscar">Buscar</button>
+                
+                <form>
+                    <label for="txtNom">Nombre</label>
+                    <br />
+                    <input type="text" id="txtNomBus" placeholder="Nombre de la bebida a buscar" /><br />    
+                    <button type="button" id="btnRunBus" value="Buscar">Buscar</button>
+                </form>
+                <div id="resultado"></div>
             </div>
         </section>
     </div>

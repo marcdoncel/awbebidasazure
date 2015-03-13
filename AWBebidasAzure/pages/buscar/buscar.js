@@ -6,32 +6,29 @@
     WinJS.UI.Pages.define("/pages/buscar/buscar.html", {
         // This function is called whenever a user navigates to this page. It
         // populates the page elements with the app's data.
+        buscar: function () {
+
+            Azure.Busqueda(document.getElementById("txtNomBus").value).done(
+                function (res) {
+                    var ctx = document.getElementById("resultado");
+                    ctx.innerHTML = "";
+                    for (var i = 0; i < res.length; i++) {
+                        ctx.innerHTML += res[i].nombre + " -->" +
+                            res[i].precio + "<br />";
+
+                    }
+
+
+                }
+            );
+
+
+        },
+
         ready: function (element, options) {
-            // TODO: Initialize the page here.
-            var nom = document.getElementById("txtNom").value;
-            var precio = document.getElementById("txtPrecio").value;
 
-            document.getElementById("btnBuscarBebida").addEventListener("click", function () {
-                Azure.buscar(new Modelo.Bebida(nom, precio).toInsert()).done(
-                    function(res) {
-
-                        if (res.length > 0) {
-                            var d = new Windows.UI.Popups.
-                                MessageDialog("Bebida encontrada");
-
-                            d.showAsync();
-
-                        } else {
-                            var d = new Windows.UI.Popups.
-                                MessageDialog("La bebida no existe");
-
-                            d.showAsync();
-
-                        }
-
-
-                    });
-            });
+            document.getElementById("btnRunBus").
+            addEventListener("click", this.buscar);
         },
 
         unload: function () {
